@@ -1,0 +1,34 @@
+{
+  "root": "apps/zenda-e2e",
+  "sourceRoot": "apps/zenda-e2e/src",
+  "projectType": "application",
+  "targets": {
+    "e2e": {
+      "executor": "@nrwl/cypress:cypress",
+      "options": {
+        "cypressConfig": "apps/zenda-e2e/cypress.json",
+        "devServerTarget": "zenda:serve:development"
+      },
+      "configurations": {
+        "production": {
+          "devServerTarget": "zenda:serve:production"
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": [
+        "{options.outputFile}"
+      ],
+      "options": {
+        "lintFilePatterns": [
+          "apps/zenda-e2e/**/*.{js,ts}"
+        ]
+      }
+    }
+  },
+  "tags": [],
+  "implicitDependencies": [
+    "zenda"
+  ]
+}

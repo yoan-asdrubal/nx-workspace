@@ -1,0 +1,26 @@
+{
+  "projectType": "library",
+  "root": "libs/shared/zenda-material",
+  "sourceRoot": "libs/shared/zenda-material/src",
+  "prefix": "zenda-frontend",
+  "targets": {
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/shared/zenda-material"],
+      "options": {
+        "jestConfig": "libs/shared/zenda-material/jest.config.js",
+        "passWithNoTests": true
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "options": {
+        "lintFilePatterns": [
+          "libs/shared/zenda-material/src/**/*.ts",
+          "libs/shared/zenda-material/src/**/*.html"
+        ]
+      }
+    }
+  },
+  "tags": []
+}
